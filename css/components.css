@@ -2097,58 +2097,275 @@
 }
 
 /* --------------------------------------------------------------------------
-   Footer
+   Enhanced Responsive Footer
    -------------------------------------------------------------------------- */
 .site-footer {
-  padding: 3.5rem 0 2.5rem;
+  padding: 4.5rem 0 2.5rem;
   border-top: 1px solid var(--border-subtle);
-  background: var(--bg-surface);
+  background: var(--bg-surface-elevated);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(800px, 90vw);
+  height: 2px;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
-.footer-top {
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1.45fr 0.9fr;
+  gap: 3.5rem;
+}
+
+/* Brand Col */
+.footer-col-brand {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.footer-brand-header {
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  gap: 0.85rem;
 }
 
-.footer-brand h4 {
-  font-size: 1.15rem;
-  margin-bottom: 0.25rem;
+.footer-brand-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-.footer-brand p {
-  font-size: 0.88rem;
+.footer-brand-subtitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.footer-brand-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.footer-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #34d399;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+/* Section Headings */
+.footer-heading {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+/* Direct Contact Social Grid */
+.footer-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.footer-social-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.footer-social-card:hover {
+  border-color: var(--color-accent);
+  background: var(--bg-surface-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .footer-social-card {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .footer-social-card:hover {
+  background: #f8fafc;
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+.social-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.social-card-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.social-card-icon.github {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.social-card-icon.linkedin {
+  background: rgba(10, 102, 194, 0.18);
+  color: #38bdf8;
+}
+
+.social-card-icon.email {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.social-card-icon.phone {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.social-card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.social-card-name {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.social-card-handle {
+  font-size: 0.74rem;
   color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.social-card-arrow {
+  color: var(--text-tertiary);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.footer-social-card:hover .social-card-arrow {
+  transform: translateX(3px);
+  color: var(--color-accent);
+}
+
+/* Nav links grid in footer */
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 1rem;
+}
+
+.footer-link {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-link:hover {
+  color: var(--color-accent);
+  transform: translateX(2px);
+}
+
+/* Footer Bottom */
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding-top: 1.5rem;
+  gap: 1.25rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--border-subtle);
   font-size: 0.85rem;
   color: var(--text-tertiary);
 }
 
-.back-to-top-btn {
+.footer-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-cv-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
   transition: all var(--transition-fast);
+}
+
+.footer-cv-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.back-to-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
 }
 
 .back-to-top-btn:hover {

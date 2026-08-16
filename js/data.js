@@ -113,6 +113,12 @@ const PORTFOLIO_DATA = {
       icon: "tools",
       description: "Project delivery & store publishing",
       tags: ["App Store Connect", "Google Play Console", "Git / GitHub", "Postman", "Figma to Flutter", "CI/CD Pipelines"]
+    },
+    {
+      category: "Professional & Soft Skills",
+      icon: "users",
+      description: "Communication, ownership & delivery",
+      tags: ["Client Communication", "Problem Solving", "End-to-End Ownership", "Time Management", "Agile Collaboration", "Root-Cause Debugging"]
     }
   ],
 

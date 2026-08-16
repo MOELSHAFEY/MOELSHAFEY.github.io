@@ -1,0 +1,987 @@
+/* ==========================================================================
+   Comprehensive Multi-Breakpoint Responsive Stylesheet - Mohamed Elshafey Portfolio
+   Breakpoints:
+     1. Large Screens & Ultra-Wide Desktop (1441px+)
+     2. Laptop Standard Viewport (1025px - 1440px)
+     3. Tablet Viewport (768px - 1024px)
+     4. Large Mobile Viewport (481px - 767px)
+     5. Small Mobile Devices (320px - 480px)
+     6. Touch & Coarse Pointer Optimizations
+     7. Mobile Landscape Orientation (@media max-height: 500px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Large Screens & Ultra-Wide Desktop (1441px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1441px) {
+  :root {
+    --container-max: 1320px;
+    --header-height: 80px;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 4.5rem);
+    padding-bottom: 6rem;
+  }
+
+  .hero-grid {
+    gap: 4.5rem;
+  }
+
+  .phone-mockup-frame {
+    width: 320px;
+    height: auto;
+    aspect-ratio: 9 / 18.5;
+  }
+
+  .phone-showcase-wrapper {
+    max-width: 335px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .usp-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Laptop Standard Viewport (1025px - 1440px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  :root {
+    --container-max: 1200px;
+    --header-height: 74px;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 3.2rem);
+    padding-bottom: 4.5rem;
+  }
+
+  .hero-grid {
+    gap: 3.5rem;
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .phone-mockup-frame {
+    width: 290px;
+    height: auto;
+    aspect-ratio: 9 / 18.5;
+  }
+
+  .phone-showcase-wrapper {
+    max-width: 305px;
+  }
+
+  .flagship-grid {
+    grid-template-columns: 1.15fr 0.85fr !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.35rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.35rem;
+  }
+
+  .usp-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.35rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Tablet Viewport (768px - 1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .site-header {
+    top: 10px;
+    padding: 0 0.75rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Compact dock navbar for tablet screens */
+  .nav-container {
+    width: max-content;
+    max-width: 98%;
+    height: 50px;
+    padding: 3px 6px 3px 8px;
+    gap: 0.35rem;
+    justify-content: center;
+  }
+
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    position: static;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .nav-link {
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 0.32rem 0.55rem;
+    border-radius: var(--radius-full);
+    min-height: auto;
+    border: none;
+    background: transparent;
+    white-space: nowrap;
+  }
+
+  .nav-actions {
+    gap: 0.35rem;
+    padding-left: 0.35rem;
+    border-left: 1px solid var(--border-subtle);
+  }
+
+  .theme-toggle-btn,
+  #nav-download-cv-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+
+  .theme-toggle-btn svg,
+  #nav-download-cv-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .nav-cta {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    min-height: 34px;
+  }
+
+  /* Hero Section Tablet */
+  .hero-section {
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 4rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: left;
+  }
+
+  .hero-visual-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone-mockup-frame {
+    width: min(290px, 80vw);
+    height: auto;
+    aspect-ratio: 9 / 18.5;
+  }
+
+  /* Proof Bar Tablet */
+  .proof-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1.25rem;
+  }
+
+  /* About Tablet */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Grids on Tablet: 2 Columns */
+  .usp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* Flagship Projects Tablet: 1 Column Stack */
+  .flagship-grid {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+  }
+
+  .flagship-content {
+    order: 1 !important;
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+  }
+
+  .flagship-visual {
+    order: 2 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid var(--border-subtle) !important;
+    padding: 2.75rem 1.5rem;
+  }
+
+  .phone-showcase-wrapper {
+    max-width: min(290px, 80vw);
+  }
+
+  /* Contact Tablet */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Below 768px: Mobile Viewport & Hamburger Menu (<= 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  .section {
+    padding-top: clamp(2.75rem, 5vw, 3.5rem);
+    padding-bottom: clamp(2.75rem, 5vw, 3.5rem);
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* Mobile Sticky Header */
+  .site-header {
+    top: 8px;
+    padding: 0 0.75rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-container {
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    padding: 0 0.65rem;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .nav-actions {
+    border-left: none;
+    padding-left: 0;
+    gap: 0.45rem;
+  }
+
+  /* Mobile Menu Toggle Button (Min 44x44px Touch Target) */
+  .mobile-menu-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* Full Accessible Mobile Menu Drawer */
+  .nav-links {
+    position: fixed;
+    top: calc(var(--header-height) + 14px);
+    left: clamp(10px, 3vw, 20px);
+    right: clamp(10px, 3vw, 20px);
+    background: rgba(10, 15, 26, 0.97);
+    backdrop-filter: blur(28px) saturate(200%);
+    -webkit-backdrop-filter: blur(28px) saturate(200%);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), 0 0 30px var(--color-accent-glow);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.15rem;
+    gap: 0.45rem;
+    transform: translateY(-16px) scale(0.97);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
+    z-index: 999;
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [data-theme="light"] .nav-links {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.16), 0 0 24px rgba(2, 132, 199, 0.12);
+  }
+
+  .nav-links.is-open {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    font-size: 0.98rem;
+    font-weight: 600;
+    width: 100%;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+  }
+
+  [data-theme="light"] .nav-link {
+    background: rgba(15, 23, 42, 0.02);
+    color: var(--text-primary);
+    border-color: rgba(15, 23, 42, 0.08);
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+  }
+
+  [data-theme="light"] .nav-link:hover {
+    background: rgba(2, 132, 199, 0.08);
+    color: var(--color-accent);
+  }
+
+  .nav-link.active {
+    background: var(--gradient-accent);
+    color: #ffffff !important;
+    border-color: transparent;
+  }
+
+  /* Hero Mobile */
+  .hero-section {
+    padding-top: calc(var(--header-height) + 1.75rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: left;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 5.8vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 0.98rem;
+    justify-content: center;
+  }
+
+  .hero-social-links {
+    justify-content: flex-start;
+    gap: 0.65rem;
+  }
+
+  .phone-mockup-frame {
+    width: min(270px, 85vw);
+    height: auto;
+    aspect-ratio: 9 / 18.5;
+    margin: 0 auto;
+  }
+
+  .mockup-switcher-dock {
+    bottom: -18px;
+    padding: 3px 6px;
+    max-width: 96%;
+    gap: 4px;
+  }
+
+  .switcher-tab {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Proof Bar Mobile (2x2 Grid) */
+  .proof-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .proof-number {
+    font-size: 1.45rem;
+  }
+
+  .proof-label {
+    font-size: 0.82rem;
+  }
+
+  /* About Features Mobile */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .about-features-list {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .code-preview-card {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .code-body {
+    padding: 1rem;
+    font-size: clamp(0.74rem, 2.2vw, 0.82rem);
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Grids Mobile Stack (1 Column) */
+  .skills-grid,
+  .usp-grid,
+  .education-grid,
+  .services-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Projects Filter Bar */
+  .projects-filter-bar {
+    gap: 0.45rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    font-size: 0.84rem;
+    padding: 0.5rem 1rem;
+    min-height: 44px;
+  }
+
+  /* Flagship Projects Mobile */
+  .flagship-case-study {
+    border-radius: var(--radius-lg);
+    margin-bottom: 2.5rem;
+  }
+
+  .flagship-grid {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+  }
+
+  .flagship-content {
+    order: 1 !important;
+    padding: 1.75rem 1.25rem;
+    gap: 1.2rem;
+  }
+
+  .flagship-title {
+    font-size: 1.55rem;
+  }
+
+  .flagship-desc {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .flagship-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .flagship-actions .store-badge-btn,
+  .flagship-actions .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  .flagship-visual {
+    order: 2 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid var(--border-subtle) !important;
+    padding: 2.25rem 1rem;
+    overflow: hidden;
+  }
+
+  .phone-showcase-wrapper {
+    max-width: min(270px, 85vw);
+  }
+
+  /* Slider nav buttons placed safely inside chassis bounds on mobile to prevent viewport overflow */
+  .slider-nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .slider-nav-btn.prev {
+    left: 6px;
+  }
+
+  .slider-nav-btn.next {
+    right: 6px;
+  }
+
+  /* Achievements (2x2 Grid) */
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .achievement-stat-card {
+    padding: 1.75rem 1rem;
+  }
+
+  .achievement-number {
+    font-size: 1.85rem;
+  }
+
+  /* Experience Mobile */
+  .experience-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Contact Mobile */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .contact-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-method-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .contact-method-item .copy-btn {
+    align-self: flex-start;
+    min-height: 42px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .email-builder-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .builder-select,
+  .builder-input,
+  .builder-textarea {
+    font-size: 16px !important; /* iOS no-zoom rule */
+    padding: 0.85rem 1rem;
+    min-height: 48px;
+  }
+
+  /* Footer Mobile */
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .back-to-top-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Small Mobile Devices (320px - 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  :root {
+    --header-height: 52px;
+  }
+
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .site-header {
+    top: 6px;
+    padding: 0 0.4rem;
+  }
+
+  .nav-container {
+    height: 46px;
+    padding: 0 0.5rem;
+    gap: 0.35rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav-cta {
+    display: none !important;
+  }
+
+  .theme-toggle-btn,
+  #nav-download-cv-btn,
+  .mobile-menu-toggle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 1.25rem);
+    padding-bottom: 2.75rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.4rem, 6.5vw, 1.85rem) !important;
+    line-height: 1.22;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .availability-pill {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.65rem;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  .phone-mockup-frame {
+    width: min(240px, 86vw);
+    aspect-ratio: 9 / 18.5;
+    padding: 7px;
+    border-radius: 34px;
+  }
+
+  .phone-screen-container {
+    border-radius: 26px;
+  }
+
+  .mockup-switcher-dock {
+    bottom: -16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    gap: 3px;
+    width: 96%;
+    padding: 4px;
+  }
+
+  .switcher-tab {
+    font-size: 0.68rem;
+    padding: 5px 8px;
+    min-height: 32px;
+  }
+
+  /* Proof Bar Small Screen */
+  .proof-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 0.6rem;
+  }
+
+  .proof-item {
+    padding: 0.5rem 0.2rem;
+  }
+
+  .proof-number {
+    font-size: 1.3rem;
+  }
+
+  .proof-label {
+    font-size: 0.78rem;
+  }
+
+  /* Flagship Case Study Small Screen */
+  .flagship-case-study {
+    margin-bottom: 2rem;
+  }
+
+  .flagship-content {
+    padding: 1.35rem 0.9rem;
+    gap: 1rem;
+  }
+
+  .flagship-title {
+    font-size: 1.35rem;
+  }
+
+  .project-number {
+    font-size: 0.72rem;
+  }
+
+  .project-category-badge,
+  .brand-badge {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .phone-showcase-wrapper {
+    max-width: min(240px, 92vw);
+  }
+
+  .realistic-phone-chassis {
+    border-radius: 34px;
+    padding: 6px;
+  }
+
+  .phone-screen-viewport {
+    border-radius: 28px;
+  }
+
+  .slider-nav-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .slider-nav-btn.prev {
+    left: 4px;
+  }
+
+  .slider-nav-btn.next {
+    right: 4px;
+  }
+
+  .slider-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .slider-dot.active {
+    width: 18px;
+  }
+
+  .slider-counter-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  /* Achievements 2-column compact on small mobile */
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .achievement-stat-card {
+    padding: 1.25rem 0.65rem;
+    gap: 0.35rem;
+  }
+
+  .achievement-number {
+    font-size: 1.55rem;
+  }
+
+  .achievement-label {
+    font-size: 0.88rem;
+  }
+
+  .achievement-desc {
+    font-size: 0.78rem;
+  }
+
+  /* Contact Form Inputs */
+  .email-builder-card {
+    padding: 1.25rem 0.9rem;
+  }
+
+  .method-details {
+    gap: 0.65rem;
+  }
+
+  .method-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  .method-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .method-val {
+    font-size: 0.88rem;
+    word-break: break-all;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Touch & Coarse Pointer Optimizations
+   -------------------------------------------------------------------------- */
+@media (pointer: coarse), (hover: none) {
+  .btn,
+  .store-badge-btn,
+  .filter-btn,
+  .nav-link,
+  .switcher-tab,
+  .copy-btn,
+  .slider-nav-btn,
+  .theme-toggle-btn,
+  #nav-download-cv-btn,
+  .mobile-menu-toggle {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent sticky hover transforms on touch devices */
+  .flagship-case-study:hover,
+  .usp-card:hover,
+  .service-card:hover,
+  .skill-category-card:hover,
+  .education-card:hover,
+  .achievement-stat-card:hover,
+  .testimonial-card:hover,
+  .experience-card:hover,
+  .code-preview-card:hover,
+  .phone-mockup-frame:hover,
+  .realistic-phone-chassis:hover {
+    transform: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Mobile Landscape Orientation (@media max-height: 500px)
+   -------------------------------------------------------------------------- */
+@media (max-height: 500px) {
+  :root {
+    --header-height: 48px;
+  }
+
+  .site-header {
+    top: 4px;
+  }
+
+  .nav-container {
+    height: 44px;
+  }
+
+  .nav-links {
+    top: 54px;
+    max-height: calc(100vh - 60px);
+    padding: 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .nav-link {
+    min-height: 40px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 1rem);
+    padding-bottom: 2rem;
+  }
+}

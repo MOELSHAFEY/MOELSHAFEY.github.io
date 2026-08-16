@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Design Tokens & CSS Variables - Mohamed Elshafey Portfolio
+   Ultra-Refined Dark Obsidian & Architectural Pure White Themes
+   High-Fidelity Hover Effects, Contrast & Micro-Glow Architecture
+   ========================================================================== */
+
+:root {
+  /* Typography Hierarchy */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', var(--font-sans);
+  --font-arabic: 'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Primary Brand Accents: Electric Flutter Cyan-Blue */
+  --color-accent: #38bdf8;
+  --color-accent-hover: #7dd3fc;
+  --color-accent-blue: #2563eb;
+  --color-accent-deep: #0284c7;
+  --color-accent-light: rgba(56, 189, 248, 0.12);
+  --color-accent-border: rgba(56, 189, 248, 0.35);
+  --color-accent-border-hover: rgba(56, 189, 248, 0.65);
+  --color-accent-glow: rgba(56, 189, 248, 0.32);
+  --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 45%, #2563eb 100%);
+  --gradient-accent-hover: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 50%, #0284c7 100%);
+  --gradient-text: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%);
+
+  /* Multi-Accent System */
+  --color-emerald: #10b981;
+  --color-emerald-light: rgba(16, 185, 129, 0.14);
+  --color-amber: #f59e0b;
+  --color-amber-light: rgba(245, 158, 11, 0.14);
+  --color-purple: #a855f7;
+  --color-purple-light: rgba(168, 85, 247, 0.14);
+  --color-rose: #f43f5e;
+  --color-rose-light: rgba(244, 63, 94, 0.14);
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-success-light: rgba(16, 185, 129, 0.15);
+  --color-warning: #f59e0b;
+  --color-warning-light: rgba(245, 158, 11, 0.15);
+
+  /* Physics-Based Easing & Transitions */
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Layout Dimensions */
+  --container-max: 1220px;
+  --container-narrow: 880px;
+  --header-height: 76px;
+
+  /* ========================================================================
+     DEFAULT THEME: DARK MODE (Obsidian & Electric Cyan Depth)
+     ======================================================================== */
+  color-scheme: dark;
+  --bg-body: #050811;
+  --bg-surface: #0b101e;
+  --bg-surface-elevated: #11182a;
+  --bg-surface-hover: #17223b;
+  --bg-surface-glass: rgba(5, 8, 17, 0.85);
+  --bg-nav-pill: rgba(255, 255, 255, 0.06);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #64748b;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-strong: rgba(56, 189, 248, 0.4);
+
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 18px 0 rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 44px -4px rgba(0, 0, 0, 0.8);
+  --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 4px 24px rgba(0, 0, 0, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  --shadow-card-hover: 0 0 0 1px rgba(56, 189, 248, 0.5), 0 16px 44px -4px rgba(2, 132, 199, 0.35), 0 0 24px -2px rgba(56, 189, 248, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+  --shadow-glow: 0 0 28px rgba(56, 189, 248, 0.38);
+
+  --phone-bezel: #141b2b;
+  --phone-screen-bg: #03060c;
+  --phone-inner-border: rgba(255, 255, 255, 0.12);
+
+  --badge-bg: rgba(255, 255, 255, 0.06);
+  --badge-text: #f1f5f9;
+  --badge-border: rgba(255, 255, 255, 0.12);
+  --badge-hover-bg: rgba(56, 189, 248, 0.14);
+  --badge-hover-border: rgba(56, 189, 248, 0.4);
+  --badge-hover-text: #7dd3fc;
+}
+
+/* ==========================================================================
+   LIGHT THEME OVERRIDE (High-End Studio White & Sapphire Architecture)
+   ======================================================================== */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-body: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-surface-hover: #e8eef8;
+  --bg-surface-glass: rgba(255, 255, 255, 0.92);
+  --bg-nav-pill: rgba(15, 23, 42, 0.05);
+
+  --color-accent: #0284c7;
+  --color-accent-hover: #0369a1;
+  --color-accent-blue: #1d4ed8;
+  --color-accent-deep: #0369a1;
+  --color-accent-light: rgba(2, 132, 199, 0.08);
+  --color-accent-border: rgba(2, 132, 199, 0.32);
+  --color-accent-border-hover: rgba(2, 132, 199, 0.6);
+  --color-accent-glow: rgba(2, 132, 199, 0.22);
+  --gradient-accent: linear-gradient(135deg, #0284c7 0%, #0369a1 55%, #1d4ed8 100%);
+  --gradient-accent-hover: linear-gradient(135deg, #0369a1 0%, #0284c7 60%, #0ea5e9 100%);
+  --gradient-text: linear-gradient(135deg, #0f172a 25%, #0284c7 100%);
+
+  /* Multi-Accent System (Light) */
+  --color-emerald: #059669;
+  --color-emerald-light: rgba(5, 150, 105, 0.1);
+  --color-amber: #d97706;
+  --color-amber-light: rgba(217, 119, 6, 0.1);
+  --color-purple: #9333ea;
+  --color-purple-light: rgba(147, 51, 234, 0.1);
+  --color-rose: #e11d48;
+  --color-rose-light: rgba(225, 29, 72, 0.1);
+
+  --text-primary: #090d16;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  --text-muted: #94a3b8;
+
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.15);
+  --border-strong: rgba(2, 132, 199, 0.38);
+
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 18px -2px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px -4px rgba(15, 23, 42, 0.12);
+  --shadow-card: 0 0 0 1px rgba(15, 23, 42, 0.08), 0 4px 20px -2px rgba(15, 23, 42, 0.06), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  --shadow-card-hover: 0 0 0 1px rgba(2, 132, 199, 0.45), 0 18px 40px -6px rgba(15, 23, 42, 0.14), 0 0 22px -2px rgba(2, 132, 199, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 1);
+  --shadow-glow: 0 0 24px rgba(2, 132, 199, 0.22);
+
+  --phone-bezel: #0f172a;
+  --phone-screen-bg: #000000;
+  --phone-inner-border: rgba(255, 255, 255, 0.14);
+
+  --badge-bg: rgba(15, 23, 42, 0.05);
+  --badge-text: #1e293b;
+  --badge-border: rgba(15, 23, 42, 0.1);
+  --badge-hover-bg: rgba(2, 132, 199, 0.1);
+  --badge-hover-border: rgba(2, 132, 199, 0.38);
+  --badge-hover-text: #0284c7;
+}
+

@@ -1,0 +1,230 @@
+/* ==========================================================================
+   Base Styles, Reset & Ambient Canvas Architecture
+   Consistent LTR Alignment with Arabic Typography Integration
+   ========================================================================== */
+
+/* Modern CSS Reset & Viewport Constraints */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  direction: ltr;
+  overflow-x: clip;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  direction: ltr;
+  text-align: left;
+  position: relative;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Ambient Radial Glows for Rich Dark Mode & Light Mode Depth */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100vh;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(2, 132, 199, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] body::before {
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(2, 132, 199, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(56, 189, 248, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
+}
+
+/* Responsive Typography with Smooth clamp() Scaling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+h1 { font-size: clamp(2.1rem, 4.2vw + 0.8rem, 3.8rem); font-weight: 800; line-height: 1.15; }
+h2 { font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem); font-weight: 800; }
+h3 { font-size: clamp(1.25rem, 1.8vw + 0.4rem, 1.85rem); }
+h4 { font-size: clamp(1.05rem, 1.2vw + 0.3rem, 1.35rem); }
+
+p {
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 0.3vw + 0.92rem, 1.12rem);
+  line-height: 1.68;
+}
+
+/* Accent Highlight Typography */
+.accent-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* Arabic Text Enhancements in LTR Layout */
+.arabic-text,
+:lang(ar),
+[dir="rtl"] {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+
+.ar-badge {
+  font-family: var(--font-arabic);
+  font-weight: 600;
+  direction: rtl;
+  display: inline-block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img, svg, video, iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 3vw, 1.75rem);
+  padding-right: clamp(1rem, 3vw, 1.75rem);
+  position: relative;
+  z-index: 1;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* Section Spacing */
+.section {
+  padding-top: clamp(3.5rem, 6vw, 6rem);
+  padding-bottom: clamp(3.5rem, 6vw, 6rem);
+  position: relative;
+  z-index: 1;
+}
+
+.section-header {
+  margin-bottom: 3.75rem;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--radius-full);
+}
+
+.section-title {
+  margin-bottom: 0.85rem;
+  color: var(--text-primary);
+}
+
+.section-description {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Status Indicator Dot */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+  display: inline-block;
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+  opacity: 0.4;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.7); opacity: 0; }
+}
+
+/* Scroll Animation Utilities */
+.reveal-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--color-accent);
+  color: #060911;
+}

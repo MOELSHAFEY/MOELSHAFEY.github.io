@@ -41,39 +41,41 @@ function setTheme(theme) {
    Mobile Navigation Drawer
    -------------------------------------------------------------------------- */
 function initMobileMenu() {
+  const siteHeader = document.getElementById('site-header');
   const menuToggle = document.getElementById('mobile-menu-toggle');
   const navLinks = document.getElementById('nav-links');
   const navLinkItems = document.querySelectorAll('.nav-link');
 
   if (!menuToggle || !navLinks) return;
 
-  menuToggle.addEventListener('click', () => {
-    const isOpen = menuToggle.classList.toggle('is-active');
+  function toggleMenu(forceOpen) {
+    const isOpen = typeof forceOpen === 'boolean' ? forceOpen : !navLinks.classList.contains('is-open');
+    menuToggle.classList.toggle('is-active', isOpen);
     navLinks.classList.toggle('is-open', isOpen);
+    if (siteHeader) siteHeader.classList.toggle('is-menu-open', isOpen);
     menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
   });
 
   navLinkItems.forEach(link => {
     link.addEventListener('click', () => {
-      menuToggle.classList.remove('is-active');
-      navLinks.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      toggleMenu(false);
     });
   });
 
   document.addEventListener('click', (e) => {
     if (!navLinks.contains(e.target) && !menuToggle.contains(e.target) && navLinks.classList.contains('is-open')) {
-      menuToggle.classList.remove('is-active');
-      navLinks.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      toggleMenu(false);
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
-      menuToggle.classList.remove('is-active');
-      navLinks.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      toggleMenu(false);
       menuToggle.focus();
     }
   });

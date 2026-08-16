@@ -30,9 +30,10 @@ const PORTFOLIO_DATA = {
 
   // 2. ABOUT ME
   about: {
-    story: "I am a dedicated Flutter Developer with over 2 years of production experience taking mobile applications from concept and architectural design to full release on the Google Play Store and Apple App Store. My journey started with a deep curiosity for clean software design and user experience, which quickly evolved into building enterprise-grade apps for prestigious universities and commercial businesses across Egypt and Saudi Arabia.",
-    clientValue: "For my clients, I eliminate the risks of mobile app development. You get a single, robust codebase that looks and feels native on both iOS and Android, built on scalable Clean Architecture that won't require costly rewrites as your user base grows. I handle everything from pixel-perfect UI implementation and complex API integrations to navigating Apple and Google's strict app store review policies for guaranteed approval.",
-    personality: "When I'm not writing Dart or optimizing frame rendering times to maintain a locked 60fps, I enjoy exploring open-source tools, designing intuitive Arabic typography workflows, and helping fellow developers master clean state management."
+    hook: "What if your next customer is already looking for your business on their phone?",
+    story: "Today, a mobile app is an important way for businesses to reach their customers faster, show their products and services, take orders and bookings, and most importantly, reach new customers and increase sales. I’m Mohamed Elshafey, a Mobile Developer specializing in Flutter. I help businesses and startups turn their ideas into professional and easy-to-use mobile apps that help them reach their customers and grow their business.",
+    flagshipExperience: "One of the projects I’m proud of is developing the official mobile app for Menoufia University, a public university in Egypt. It was an important experience for me and gave me real experience in building apps used by many people.",
+    cta: "Have an app idea? Let’s turn it into a real product that helps your business grow and increase sales."
   },
 
   // 3. UNIQUE SELLING POINT (USP)
